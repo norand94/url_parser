@@ -1,0 +1,4 @@
+*.exe
+/parser
+/.idea
+
