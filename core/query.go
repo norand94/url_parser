@@ -12,12 +12,11 @@ func Parse (url string) {
 		return
 	}
 	fmt.Println("links:")
-	doc.Each(func(i int, s *goquery.Selection) {
-		a := s.Find("a")
-		text := a.Text()
-		href, ok := a.Attr("href")
+	doc.Find("a").Each(func(i int, s *goquery.Selection) {
+		//text := a.Text()
+		href, ok := s.Attr("href")
 		if ok {
-			fmt.Printf("%s  -  %s", href, text)
+			fmt.Printf("%s \n", href)
 		}
 	})
 
